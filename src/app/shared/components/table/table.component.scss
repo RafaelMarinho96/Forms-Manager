@@ -9,6 +9,7 @@
 
 @import '~src/assets/styles/_base/variables';
 @import '~src/assets/styles/_components/buttons';
+@import '~src/assets/styles/_components/badges';
 
 .tbl-head {
     tr {
@@ -42,5 +43,9 @@
     &-checkbox{
         background-color: $gray-200;
         width: 2%;
+    }
+
+    &-badge{
+        background-color: $gray-300;
     }
 }
