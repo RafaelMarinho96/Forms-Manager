@@ -7,13 +7,15 @@ import { TableComponent } from './shared/components/table/table.component';
 
 import { AppRoutingModule } from './app.routing.module';
 import { LoginComponent } from './login/login.component';
+import { RegisterComponent } from './register/register.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavbarComponent, // Declarado como teste
     TableComponent, // Declarado como teste
-    LoginComponent
+    LoginComponent,
+    RegisterComponent
   ],
   imports: [
     BrowserModule,
