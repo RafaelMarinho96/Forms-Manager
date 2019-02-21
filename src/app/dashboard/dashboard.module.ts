@@ -3,14 +3,18 @@ import { CommonModule } from "@angular/common";
 
 import { DashboardComponent } from "./dashboard.component";
 import { NavbarComponent } from "../shared/layout/navbar/navbar.component";
+import { TableComponent } from "../shared/components/table/table.component";
+import { DashboardRoutingModule } from "./dashboard.routing.module";
 
 @NgModule({
     declarations: [
         NavbarComponent,
-        DashboardComponent        
+        DashboardComponent,
+        TableComponent        
     ],
     imports: [
-        CommonModule
+        CommonModule,
+        DashboardRoutingModule
     ],
     exports: [],
     providers: []
