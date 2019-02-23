@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { ReactiveFormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 
 import { LoginComponent } from './login/login.component';
@@ -7,6 +8,7 @@ import { RegisterComponent } from './register/register.component';
 
 import { AppRoutingModule } from './app.routing.module';
 import { DashboardModule } from './dashboard/dashboard.module';
+import { HelperTextModule } from './shared/components/helper-text/helper-text.module';
 
 @NgModule({
   declarations: [
@@ -17,7 +19,9 @@ import { DashboardModule } from './dashboard/dashboard.module';
   imports: [
     BrowserModule,
     AppRoutingModule,
+    ReactiveFormsModule,
 
+    HelperTextModule,
     DashboardModule
   ],
   providers: [],
