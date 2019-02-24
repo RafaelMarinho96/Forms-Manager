@@ -9,6 +9,7 @@ import { RegisterComponent } from './register/register.component';
 import { AppRoutingModule } from './app.routing.module';
 import { DashboardModule } from './dashboard/dashboard.module';
 import { HelperTextModule } from './shared/components/helper-text/helper-text.module';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -20,6 +21,7 @@ import { HelperTextModule } from './shared/components/helper-text/helper-text.mo
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
+    HttpClientModule,
 
     HelperTextModule,
     DashboardModule

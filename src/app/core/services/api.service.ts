@@ -5,7 +5,9 @@ import { catchError } from 'rxjs/operators';
 
 import { environment } from "../../../environments/environment";
 
-@Injectable()
+@Injectable({
+    providedIn: 'root'
+})
 
 export class ApiService{
 
@@ -17,8 +19,7 @@ export class ApiService{
 
     post(path: string, body: Object): Observable<any> {
         return this.http.post(
-            `${environment.apiUrl}${path}`,
-            JSON.stringify(body)
+            `${environment.apiUrl}${path}`, body
         ).pipe(catchError(this.formatErrors));
     }   
 

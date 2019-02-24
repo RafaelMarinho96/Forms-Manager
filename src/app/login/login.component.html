@@ -2,15 +2,15 @@
     <div class="card card-login mx-auto mt-5">
         <div class="card-header">Login</div>
         <div class="card-body">
-            <form [formGroup]="login">
+            <form [formGroup]="loginForm" (submit)="login()">
                 <div class="form-group">
                     <div class="form-label-group">
-                        <input formControlName="username" type="email" id="inputEmail" class="form-control" placeholder="Email address" required="required" autofocus="autofocus">
+                        <input #emailInput formControlName="username" type="email" id="inputEmail" class="form-control" placeholder="Email address" required="required" autofocus="autofocus">
                         <label for="inputEmail">Email</label>
                     </div>
                     <app-helper-text
                         class="text-muted text-right"
-                        *ngIf="login.get('username').errors?.required" text="* Required Field">
+                        *ngIf="loginForm.get('username').errors?.required" text="* Required Field">
                     </app-helper-text>
                 </div>
                 <div class="form-group">
@@ -20,7 +20,7 @@
                     </div>
                     <app-helper-text
                         class="text-muted text-right"
-                        *ngIf="login.get('password').errors?.required" text="* Required Field">
+                        *ngIf="loginForm.get('password').errors?.required" text="* Required Field">
                     </app-helper-text>
                 </div>
                 <div class="form-group">
@@ -30,7 +30,7 @@
                         </label>
                     </div>
                 </div>
-                <button [disabled]="login.invalid" class="btn btn-primary btn-block">Login</button>
+                <button [disabled]="loginForm.invalid" class="btn btn-primary btn-block">Login</button>
             </form>
 
             <div class="text-center">
