@@ -4,6 +4,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { AuthGuard } from './core/services/auth.guard';
+import { ForgotPasswordComponent } from './login/forgot-password/forgot-password.component';
 
 const appRoutes: Routes = [
     {
@@ -14,6 +15,11 @@ const appRoutes: Routes = [
     {
         path: 'login',
         component: LoginComponent,
+        canActivate: [AuthGuard]
+    },
+    {
+        path: 'forgot-password',
+        component: ForgotPasswordComponent,
         canActivate: [AuthGuard]
     },
     {
