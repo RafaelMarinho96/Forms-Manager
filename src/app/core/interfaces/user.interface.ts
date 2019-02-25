@@ -1,6 +1,4 @@
-export interface User{
-    nome: string,
-    sobrenome: string,
-    email: string,
-    senha: string
+export interface UserInterface{
+    setToken(token: string);
+    getUser();
 }

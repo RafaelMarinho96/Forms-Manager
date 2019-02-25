@@ -1,7 +1,8 @@
 import { Component, OnInit, ElementRef, ViewChild } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
-import { AuthService } from '../core/services/auth.service';
 import { Router } from '@angular/router';
+
+import { AuthService } from '../core/services/auth.service';
 import { PlatformDetectorService } from '../core/platform-detector/platform-detector.service';
 
 @Component({
