@@ -6,7 +6,6 @@ import { AuthService } from '../core/services/auth.service';
 import { PlatformDetectorService } from '../core/platform-detector/platform-detector.service';
 
 @Component({
-    selector: 'app-login',
     templateUrl: './login.component.html',
     styleUrls: ['./login.component.scss']
 })
