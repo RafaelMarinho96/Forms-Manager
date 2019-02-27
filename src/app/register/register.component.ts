@@ -1,6 +1,7 @@
 import { Component, OnInit } from "@angular/core";
 import { FormGroup, FormBuilder, Validators } from "@angular/forms";
 import { EmailValidatorService } from "../core/services/email.validator.service";
+import { RegisterService } from "../core/services/register.service";
 
 @Component({
     templateUrl: './register.component.html',
@@ -13,7 +14,8 @@ export class RegisterComponent implements OnInit{
     
     constructor(
         private formBuilder: FormBuilder,
-        private emailValidatorService: EmailValidatorService){}
+        private emailValidatorService: EmailValidatorService,
+        private registerService: RegisterService){}
     
     ngOnInit(): void {
         this.registerForm = this.formBuilder.group({
@@ -53,6 +55,24 @@ export class RegisterComponent implements OnInit{
                 ] 
             ]
         })
+    }
+
+    register(){
+        let email = this.registerForm.get('email').value;
+        let password = this.registerForm.get('password').value;
+        let name = this.registerForm.get('name').value;
+        let lastname = this.registerForm.get('name').value;
+
+        this.registerService
+            .registerUser(email, password, name, lastname)
+            .subscribe(
+                () => {
+                    console.log('Usuario registrado com sucesso'),
+                    this.registerForm.reset();
+                },(err) => {
+                    console.log('Falha ao registrar o usuario');
+                }
+            )
     }
 
 }

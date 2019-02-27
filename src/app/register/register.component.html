@@ -2,7 +2,7 @@
     <div class="card card-register mx-auto mt-5">
         <div class="card-header">Cadastre-se sua Conta</div>
         <div class="card-body">
-            <form [formGroup]="registerForm">
+            <form [formGroup]="registerForm" (submit)="register()">
                 <div class="form-group">
                     <div class="form-row">
                         <div class="col-md-6">
