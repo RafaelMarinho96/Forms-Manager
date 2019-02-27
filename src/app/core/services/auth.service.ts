@@ -20,4 +20,18 @@ export class AuthService {
             this.userService.setToken(authToken);
         }))
     }
+
+    forgotPassword(email: string){
+        return this.api.post('/user/forgotPassword', {
+            email: email
+        })
+    }
+
+    resetPassword(password: string, token: string, email: string){
+        return this.api.post('/user/resetPassword', {
+            password: password,
+            token: token,
+            email: email
+        })
+    }
 }
