@@ -2,6 +2,7 @@ import { NgModule } from "@angular/core";
 import { Routes, RouterModule } from "@angular/router";
 import { DashboardComponent } from "./dashboard.component";
 import { TableComponent } from "../shared/components/table/table.component";
+import { FormBuilderComponent } from "../form-builder/form-builder.component";
 
 const dashboardRoutes: Routes = [
     {
@@ -16,6 +17,10 @@ const dashboardRoutes: Routes = [
             {
                 path: 'my-dashboard',
                 component: TableComponent
+            },
+            {
+                path: 'form-builder',
+                component: FormBuilderComponent
             }
         ]
     }

@@ -7,6 +7,7 @@ import { ReactiveFormsModule } from "@angular/forms";
 import { HelperTextModule } from "../shared/components/helper-text/helper-text.module";
 import { ResetPasswordComponent } from "./reset-password/reset-password.component";
 import { LoginRoutingModule } from "./login.routing.module";
+import { FormBuilderModule } from "../form-builder/form-builder.module";
 
 @NgModule({
     declarations: [
@@ -19,7 +20,8 @@ import { LoginRoutingModule } from "./login.routing.module";
         ReactiveFormsModule,
 
         HelperTextModule,
-        LoginRoutingModule
+        LoginRoutingModule,
+        FormBuilderModule
     ],
     exports: [
         LoginComponent,
