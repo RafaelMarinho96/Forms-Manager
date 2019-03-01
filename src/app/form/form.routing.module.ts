@@ -1,7 +1,7 @@
 import { NgModule } from "@angular/core";
 import { Routes, RouterModule } from "@angular/router";
 import { FormComponent } from "./form.component";
-import { FormWizardComponent } from "./form-wizard/form-wizard.component";
+import { FormDataComponent } from "./form-wizard/form-data/form-data.component";
 
 const FORM_ROUTES: Routes = [
     {
@@ -19,7 +19,7 @@ const FORM_ROUTES: Routes = [
             },
             {
                 path: '1',
-                component: FormWizardComponent
+                component: FormDataComponent
             }
         ]
     }

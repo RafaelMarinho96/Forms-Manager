@@ -4,17 +4,21 @@ import { CommonModule } from "@angular/common";
 import { FormComponent } from "./form.component";
 import { WizardNavigationModule } from "../shared/layout/wizard-navigation/wizard-navigation.module";
 import { FormRoutingModule } from "./form.routing.module";
-import { FormWizardComponent } from "./form-wizard/form-wizard.component";
+import { FormDataComponent } from "./form-wizard/form-data/form-data.component";
+import { ReactiveFormsModule } from "@angular/forms";
+import { HelperTextModule } from "../shared/components/helper-text/helper-text.module";
 
 @NgModule({
     declarations: [
-        FormWizardComponent,
+        FormDataComponent,
         FormComponent
     ],
     imports: [
         CommonModule,
+        ReactiveFormsModule,
         WizardNavigationModule,
-        FormRoutingModule
+        FormRoutingModule,
+        HelperTextModule
     ],
     exports: [],
     providers: []
