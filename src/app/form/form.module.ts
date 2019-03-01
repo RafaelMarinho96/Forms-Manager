@@ -7,11 +7,13 @@ import { FormRoutingModule } from "./form.routing.module";
 import { FormDataComponent } from "./form-wizard/form-data/form-data.component";
 import { ReactiveFormsModule } from "@angular/forms";
 import { HelperTextModule } from "../shared/components/helper-text/helper-text.module";
+import { FormTypeComponent } from "./form-wizard/form-type/form-type.component";
 
 @NgModule({
     declarations: [
+        FormComponent,
         FormDataComponent,
-        FormComponent
+        FormTypeComponent
     ],
     imports: [
         CommonModule,

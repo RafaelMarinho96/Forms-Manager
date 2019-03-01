@@ -1,4 +1,5 @@
 @import '../../../../assets/styles/_components/inputs';
+@import '../../../../assets/styles/_base/variables';
 
 h4 {
 	font-size: 18px;
@@ -10,3 +11,6 @@ h4 {
 
 .f1-buttons { text-align: right; }
 
+.btn-orange{
+    background: $orange;
+}

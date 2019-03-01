@@ -52,7 +52,7 @@
                     </div>
                     
                     <div class="f1-buttons">
-                        <button type="button" class="btn btn-light">Next</button>
+                        <button [disabled]="dataForm.invalid" type="button" class="btn btn-orange" [routerLink]="['2']">Proximo</button>
                     </div>
                 </fieldset>
             </form>
