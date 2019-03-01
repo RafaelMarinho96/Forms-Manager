@@ -21,13 +21,6 @@ h3 {
     line-height: 30px;
 }
 
-h4 {
-	font-size: 18px;
-    font-weight: 300;
-    color: #555;
-    line-height: 26px;
-}
-
 img { max-width: 100%; }
 
 ::-moz-selection { background: #f35b3f; color: #fff; text-shadow: none; }
@@ -111,10 +104,6 @@ ul.navbar-nav {
 .f1-step.activated p { color: #f35b3f; }
 .f1-step.active p { color: #f35b3f; }
 
-.f1 fieldset { display: none; text-align: left; }
-
-.f1-buttons { text-align: right; }
-
 .f1 .input-error { border-color: #f35b3f; }
 
 
@@ -136,16 +125,6 @@ ul.navbar-nav {
 	.top-content { padding: 40px 0 110px 0; }
 
 }
-
-@media (max-width: 415px) {
-	
-	h1, h2 { font-size: 32px; }
-	
-	.f1 { padding-bottom: 20px; }
-	.f1-buttons button { margin-bottom: 5px; }
-
-}
-
 
 /* Retina-ize images/icons */
 

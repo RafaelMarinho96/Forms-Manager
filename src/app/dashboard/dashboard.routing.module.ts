@@ -21,7 +21,7 @@ const dashboardRoutes: Routes = [
             },
             {
                 path: 'new-form',
-                component: FormComponent
+                loadChildren: '../form/form.module#FormModule'
             },
             {
                 path: 'form-builder',

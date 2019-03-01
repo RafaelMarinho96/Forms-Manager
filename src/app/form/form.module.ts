@@ -3,14 +3,18 @@ import { CommonModule } from "@angular/common";
 
 import { FormComponent } from "./form.component";
 import { WizardNavigationModule } from "../shared/layout/wizard-navigation/wizard-navigation.module";
+import { FormRoutingModule } from "./form.routing.module";
+import { FormWizardComponent } from "./form-wizard/form-wizard.component";
 
 @NgModule({
     declarations: [
+        FormWizardComponent,
         FormComponent
     ],
     imports: [
         CommonModule,
-        WizardNavigationModule
+        WizardNavigationModule,
+        FormRoutingModule
     ],
     exports: [],
     providers: []
