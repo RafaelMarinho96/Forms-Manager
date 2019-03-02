@@ -3,7 +3,7 @@
         <div class="col-sm-10 offset-sm-1 form-box">
             <form [formGroup]="dataForm">
                 <fieldset>
-                    <h4>Enter with Data Forms:</h4>
+                    <h6>Enter with Data Forms</h6>
     
                     <div class="form-row">
                         <div class="form-group col">
@@ -52,7 +52,7 @@
                     </div>
                     
                     <div class="f1-buttons">
-                        <button [disabled]="dataForm.invalid" type="button" class="btn btn-orange" [routerLink]="['2']">Proximo</button>
+                        <button [disabled]="dataForm.invalid" type="button" class="btn btn-outline-dark" [routerLink]="['../2']">Proximo</button>
                     </div>
                 </fieldset>
             </form>

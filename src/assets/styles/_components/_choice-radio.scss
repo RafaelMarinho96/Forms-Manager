@@ -1,0 +1,29 @@
+@import '../_base/variables';
+
+.choice-card{
+    cursor: pointer;
+    text-align: center;
+
+    input[type="radio"] {
+        position: absolute;
+        box-sizing: border-box;
+        padding: 0;
+    }
+    
+    label{
+        background-color: $_lightGrey;
+        border: none;
+        padding: 25px 0;
+
+        i{
+            color: $_grey;
+            font-size: 2.0em;
+            margin-bottom: 10px;
+        }
+
+        p{
+            color: $_grey;
+            margin: 0;
+        }
+    }
+}

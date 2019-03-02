@@ -8,12 +8,14 @@ import { FormDataComponent } from "./form-wizard/form-data/form-data.component";
 import { ReactiveFormsModule } from "@angular/forms";
 import { HelperTextModule } from "../shared/components/helper-text/helper-text.module";
 import { FormTypeComponent } from "./form-wizard/form-type/form-type.component";
+import { FormSettingsComponent } from "./form-wizard/form-settings/form-settings.component";
 
 @NgModule({
     declarations: [
         FormComponent,
         FormDataComponent,
-        FormTypeComponent
+        FormTypeComponent,
+        FormSettingsComponent
     ],
     imports: [
         CommonModule,
