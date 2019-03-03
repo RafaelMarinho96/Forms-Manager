@@ -1,0 +1,16 @@
+
+
+.container-breadcrumb{
+    width: 100%;
+    padding: 1.5rem 0;
+
+    .breadcrumb{
+        background: none !important;
+    }
+
+    .breadcrumb-actions{
+        button{
+            margin: 0.5rem 0;
+        }
+    }
+}

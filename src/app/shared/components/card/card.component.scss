@@ -1,0 +1,17 @@
+.card-content{
+    .card-body{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        i{
+            font-size: 3em;
+            padding: 1.8rem 0;
+        }
+    }
+    .card-footer{
+        i{
+            padding: 0 0.5rem;
+        }
+    }
+}

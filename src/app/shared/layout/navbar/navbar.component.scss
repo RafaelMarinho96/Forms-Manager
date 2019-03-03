@@ -10,6 +10,10 @@
 .navbar-nav .form-inline .input-group {
     width: 100%;
   }
+
+.navbar-brand, i{
+  color: rgba(0, 0, 0, 0.5) !important;
+}
   
   .navbar-nav .nav-item.active .nav-link {
     color: #fff;

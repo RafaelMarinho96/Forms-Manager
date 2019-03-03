@@ -4,6 +4,7 @@ import { DashboardComponent } from "./dashboard.component";
 import { TableComponent } from "../shared/components/table/table.component";
 import { FormBuilderComponent } from "../form/form-builder/form-builder.component";
 import { FormComponent } from "../form/form.component";
+import { GroupComponent } from "../group/group.component";
 
 const dashboardRoutes: Routes = [
     {
@@ -17,11 +18,11 @@ const dashboardRoutes: Routes = [
             },
             {
                 path: 'my-dashboard',
-                component: TableComponent
+                component: GroupComponent
             },
             {
                 path: 'new-form',
-                loadChildren: '../form/form.module#FormModule'
+                loadChildren: '../suite/suite.module#SuiteModule'
             },
             {
                 path: 'form-builder',
