@@ -11,6 +11,11 @@
     .breadcrumb-actions{
         button{
             margin: 0.5rem 0;
+
+            i{
+                font-weight: 600;
+                font-size: 0.8em;
+            }
         }
     }
 }
