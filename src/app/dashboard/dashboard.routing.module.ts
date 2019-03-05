@@ -25,6 +25,10 @@ const dashboardRoutes: Routes = [
                 loadChildren: '../suite/suite.module#SuiteModule'
             },
             {
+                path: 'renderer',
+                loadChildren: '../suite/suite-renderer/suite-renderer.module#SuiteRendererModule'
+            },
+            {
                 path: 'form-builder',
                 component: FormBuilderComponent
             }
