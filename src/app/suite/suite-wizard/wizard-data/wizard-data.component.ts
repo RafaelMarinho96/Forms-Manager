@@ -1,5 +1,6 @@
-import { Component, OnInit } from "@angular/core";
+import { Component, OnInit, Input } from "@angular/core";
 import { FormGroup, FormBuilder, Validators } from "@angular/forms";
+import { WizardValidatorService } from "src/app/shared/validators/wizard.validator.service";
 
 @Component({
     templateUrl: './wizard-data.component.html',
@@ -8,27 +9,13 @@ import { FormGroup, FormBuilder, Validators } from "@angular/forms";
 
 export class WizardDataComponent implements OnInit{
 
-    dataForm: FormGroup;
+    form: FormGroup;
 
-    constructor(private formBuilder: FormBuilder){}
+    constructor(private wizardValidatorService: WizardValidatorService){
+        this.form = this.wizardValidatorService.form;
+    }
 
     ngOnInit(): void {
-        this.dataForm = this.formBuilder.group({
-            name: ['',
-                [
-                    Validators.required,
-                    Validators.minLength(2),
-                    Validators.maxLength(20)
-                ]
-            ],
-            author: ['Rafael Marinho'],
-            description: ['',
-                [
-                    Validators.required,
-                    Validators.minLength(8),
-                    Validators.maxLength(140)
-                ]
-            ]
-        })
+
     }
 }

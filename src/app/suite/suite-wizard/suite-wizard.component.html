@@ -1,4 +1,6 @@
 <div class="container">
     <app-wizard-navigation></app-wizard-navigation>
-    <router-outlet></router-outlet>
+    <form [formGroup]="form">
+        <router-outlet></router-outlet>
+    </form>
 </div>

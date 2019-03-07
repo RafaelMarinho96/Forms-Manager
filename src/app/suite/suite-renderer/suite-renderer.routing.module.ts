@@ -13,23 +13,14 @@ const RENDERER_ROUTES: Routes = [
                 component: NotFoundComponent
             },
             {
-                path: 'form',
+                path: ':type',
                 children: [
                     {
                         path: ':id',
                         component: SuiteRendererComponent
                     }
                 ]
-            },
-            {
-                path: 'doc',
-                children: [
-                    {
-                        path: ':id',
-                        component: SuiteRendererComponent
-                    }
-                ]
-            }           
+            }
         ]
     }
 ]

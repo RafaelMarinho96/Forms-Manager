@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container" [formGroup]="form">
     <div class="row">
         <div class="col-sm-10 offset-sm-1 form-box">
             <fieldset>
@@ -10,13 +10,21 @@
     <div class="col-sm-10 offset-sm-1">
         <div class="form-group col">
             <div class="form-label-group">
-                <input formControlName="name" type="text" id="inputName" class="form-control" placeholder="Members">
+                <input formControlName="members" type="text" id="inputName" class="form-control" placeholder="Members">
                 <label for="inputName">Members</label>
             </div>
+            <app-helper-text
+                class="text-muted text-right"
+                *ngIf="form.get('members').errors?.required" text="* Required Field">
+            </app-helper-text>
+            <app-helper-text
+                class="text-muted text-right"
+                *ngIf="form.get('members').errors?.email" text="Email format is invalid.">
+            </app-helper-text>
         </div>
     </div>
     
     <div class="f1-buttons">
-        <button type="button" class="btn btn-outline-dark" [routerLink]="['../4']">Proximo</button>
+        <button type="button" [disabled]="form.invalid" class="btn btn-outline-dark" [routerLink]="['../4']">Proximo</button>
     </div>
 </div>
