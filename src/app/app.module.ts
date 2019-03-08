@@ -8,8 +8,9 @@ import { RegisterComponent } from './register/register.component';
 import { AppRoutingModule } from './app.routing.module';
 import { DashboardModule } from './dashboard/dashboard.module';
 import { HelperTextModule } from './shared/components/helper-text/helper-text.module';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { LoginModule } from './login/login.module';
+import { RequestInterceptor } from './core/interceptors/request.interceptor.service';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,13 @@ import { LoginModule } from './login/login.module';
     DashboardModule,
     LoginModule
   ],
-  providers: [],
+  providers: [
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: RequestInterceptor,
+      multi: true
+    }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
