@@ -1,18 +1,7 @@
 import { Component, OnInit } from "@angular/core";
 declare var $: any;
-
-/*const formData = [
-    {
-        type: 'header',
-        subType: 'h1',
-        label: 'Builder your Form'
-    },
-    {
-        type: "paragraph",
-        subtype: "p",
-        label: "This is a demonstration of formBuilder running in an AngularJS project."
-    }
-]*/
+var fbEditor = document.getElementById('fb-editor');
+var formBuilder = $(fbEditor).formBuilder();
 
 @Component({
     templateUrl: './form-builder.component.html',
@@ -22,5 +11,9 @@ declare var $: any;
 export class FormBuilderComponent implements OnInit {
     ngOnInit(): void {
         $(document.getElementById('fb-editor')).formBuilder();
+    }
+
+    onClick(){
+        alert(formBuilder.formData);
     }
 }
