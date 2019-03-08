@@ -8,7 +8,7 @@ import { FormGroup, FormBuilder, Validators } from "@angular/forms";
 export class WizardValidatorService {
 
     form: FormGroup;
-    
+
     constructor(private formBuilder: FormBuilder){
         this.form = this.formBuilder.group({
             name: ['',
@@ -18,6 +18,10 @@ export class WizardValidatorService {
                     Validators.maxLength(20)
                 ]
             ],
+            type: [
+                Validators.required
+            ],
+            access: [''],
             author: ['Rafael Marinho'],
             description: ['',
                 [

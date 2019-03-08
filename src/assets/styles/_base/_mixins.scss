@@ -14,4 +14,12 @@
     -ms-border-radius: $radius;
     border-radius: $radius;
  }
+
+ /* Box Shadow */
+@mixin box-shadow($tl, $tr, $br, $bl, $rgb, $opacity) {
+   -webkit-box-shadow: $tl $tr $br $bl rgba($rgb, $opacity);
+   -moz-box-shadow: $tl $tr $br $bl rgba($rgb, $opacity);
+   -ms-box-shadow: $tl $tr $br $bl rgba($rgb, $opacity);
+   box-shadow: $tl $tr $br $bl rgba($rgb, $opacity);
+}
   

@@ -1,13 +1,25 @@
 @import '../_base/variables';
+@import '../_base/mixins';
 
 .choice-card{
     cursor: pointer;
     text-align: center;
 
+    &:hover{
+        @include box-shadow(0px, 10px, 18px, 0px, $_black, 0.26);
+    }
+
     input[type="radio"] {
         position: absolute;
         box-sizing: border-box;
         padding: 0;
+
+        &:checked + label{
+            @include box-shadow(0px, 10px, 18px, 0px, $_black, 0.26);
+            i, p{
+                color: lighten($_orange, 10%);
+            }
+        }
     }
     
     label{
