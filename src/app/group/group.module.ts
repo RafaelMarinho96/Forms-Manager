@@ -1,20 +1,24 @@
 import { NgModule } from "@angular/core";
 import { CommonModule } from "@angular/common";
 
-import { GroupComponent } from "./group.component";
+import { GroupAreaComponent } from "./group-area/group-area.component";
 import { CardModule } from "../shared/components/card/card.module";
+import { GroupContentComponent } from "./group-content/group-content.component";
+import { GroupRoutingModule } from "./group.routing.module";
 
 @NgModule({
     declarations: [
-        GroupComponent
+        GroupAreaComponent,
+        GroupContentComponent
     ],
     imports: [
         CommonModule,
-
+        GroupRoutingModule,
+        
         CardModule
     ],
     exports: [
-        GroupComponent
+        GroupAreaComponent
     ],
     providers: []
 })

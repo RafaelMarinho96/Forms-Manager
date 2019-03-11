@@ -12,8 +12,4 @@ export class FormBuilderComponent implements OnInit {
     ngOnInit(): void {
         $(document.getElementById('fb-editor')).formBuilder();
     }
-
-    onClick(){
-        alert(formBuilder.formData);
-    }
 }

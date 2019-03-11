@@ -7,10 +7,10 @@ import { FormGroup, FormBuilder, Validators } from "@angular/forms";
 
 export class WizardValidatorService {
 
-    form: FormGroup;
+    formModel: FormGroup;
 
     constructor(private formBuilder: FormBuilder){
-        this.form = this.formBuilder.group({
+        this.formModel = this.formBuilder.group({
             name: ['',
                 [
                     Validators.required,

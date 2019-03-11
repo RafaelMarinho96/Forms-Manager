@@ -2,6 +2,7 @@ import { Injectable } from "@angular/core";
 
 import { ApiService } from "./api.service";
 import { Observable } from "rxjs";
+import { map } from "rxjs/operators";
 
 @Injectable({
     providedIn: 'root'
@@ -22,6 +23,8 @@ export class FormService {
                 description: description,
                 form: forms
             }]
-        })
+        }).pipe(map(res => {
+            return res.body;
+        }))
     }
 }

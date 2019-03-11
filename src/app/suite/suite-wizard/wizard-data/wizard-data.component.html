@@ -1,4 +1,4 @@
-<div class="row" [formGroup]="form">
+<div class="row" [formGroup]="formModel">
     <div class="col-lg-12 form-box">
             <fieldset>
                 <h6>Enter with Data Forms</h6>
@@ -11,15 +11,15 @@
                         </div>
                         <app-helper-text
                             class="text-muted text-right"
-                            *ngIf="form.get('name').errors?.required" text="* Required Field">
+                            *ngIf="formModel.get('name').errors?.required" text="* Required Field">
                         </app-helper-text>
                         <app-helper-text
                             class="text-muted text-right"
-                            *ngIf="form.get('name').errors?.minlength" text="The min length is 2 characters">
+                            *ngIf="formModel.get('name').errors?.minlength" text="The min length is 2 characters">
                         </app-helper-text>
                         <app-helper-text
                             class="text-muted text-right"
-                            *ngIf="form.get('name').errors?.maxlength" text="The max length is 20 characters">
+                            *ngIf="formModel.get('name').errors?.maxlength" text="The max length is 20 characters">
                         </app-helper-text>
                     </div>
                     <div class="form-group col">
@@ -37,20 +37,20 @@
                     </div>
                     <app-helper-text
                         class="text-muted text-right"
-                        *ngIf="form.get('description').errors?.required" text="* Required Field">
+                        *ngIf="formModel.get('description').errors?.required" text="* Required Field">
                     </app-helper-text>
                     <app-helper-text
                         class="text-muted text-right"
-                        *ngIf="form.get('description').errors?.minlength" text="The min length is 8 characters">
+                        *ngIf="formModel.get('description').errors?.minlength" text="The min length is 8 characters">
                     </app-helper-text>
                     <app-helper-text
                         class="text-muted text-right"
-                        *ngIf="form.get('description').errors?.maxlength" text="The max length is 140 characters">
+                        *ngIf="formModel.get('description').errors?.maxlength" text="The max length is 140 characters">
                     </app-helper-text>
                 </div>
                 
                 <div class="f1-buttons">
-                    <button [disabled]="form.get('description').invalid || form.get('name').invalid" type="button" class="btn btn-outline-dark" [routerLink]="['../2']">Proximo</button>
+                    <button [disabled]="formModel.get('description').invalid || formModel.get('name').invalid" type="button" class="btn btn-outline-dark" [routerLink]="['../2']">Proximo</button>
                 </div>
             </fieldset>
     </div>

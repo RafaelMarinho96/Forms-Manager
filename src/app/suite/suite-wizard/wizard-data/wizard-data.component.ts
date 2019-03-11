@@ -9,10 +9,10 @@ import { WizardValidatorService } from "src/app/shared/validators/wizard.validat
 
 export class WizardDataComponent implements OnInit{
 
-    form: FormGroup;
+    formModel: FormGroup;
 
     constructor(private wizardValidatorService: WizardValidatorService){
-        this.form = this.wizardValidatorService.form;
+        this.formModel = this.wizardValidatorService.formModel;
     }
 
     ngOnInit(): void {

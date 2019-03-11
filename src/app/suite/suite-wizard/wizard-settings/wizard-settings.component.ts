@@ -10,10 +10,10 @@ import { FormGroup } from "@angular/forms";
 
 export class WizardSettingsComponent {
 
-    form: FormGroup;
+    formModel: FormGroup;
     levels: string [] = ['Protected','Public','Private'];
 
     constructor(private wizardValidatorService: WizardValidatorService){
-        this.form = this.wizardValidatorService.form;
+        this.formModel = this.wizardValidatorService.formModel;
     }
 }

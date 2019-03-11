@@ -1,4 +1,4 @@
-<div class="row" [formGroup]="form">
+<div class="row" [formGroup]="formModel">
     <div class="col-lg-12">
         <div class="row">
             <div class="col-sm-10 offset-sm-1 form-box">
@@ -16,11 +16,11 @@
                 </div>
                 <app-helper-text
                     class="text-muted text-right"
-                    *ngIf="form.get('members').errors?.required" text="* Required Field">
+                    *ngIf="formModel.get('members').errors?.required" text="* Required Field">
                 </app-helper-text>
                 <app-helper-text
                     class="text-muted text-right"
-                    *ngIf="form.get('members').errors?.email" text="Email format is invalid.">
+                    *ngIf="formModel.get('members').errors?.email" text="Email format is invalid.">
                 </app-helper-text>
             </div>
     
@@ -32,11 +32,11 @@
                 </div>
                 <app-helper-text
                     class="text-muted text-right"
-                    *ngIf="form.get('members').errors?.required" text="* Required Field">
+                    *ngIf="formModel.get('members').errors?.required" text="* Required Field">
                 </app-helper-text>
                 <app-helper-text
                     class="text-muted text-right"
-                    *ngIf="form.get('members').errors?.email" text="Email format is invalid.">
+                    *ngIf="formModel.get('members').errors?.email" text="Email format is invalid.">
                 </app-helper-text>
             </div>
         </div>

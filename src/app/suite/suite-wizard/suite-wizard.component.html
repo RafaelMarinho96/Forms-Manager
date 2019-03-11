@@ -1,8 +1,8 @@
 <div class="container">
     <app-wizard-navigation></app-wizard-navigation>
-    <form [formGroup]="form" (submit)="onSaveForm()">
+    <form [formGroup]="formModel" (submit)="onSaveForm()">
         <router-outlet></router-outlet>
 
-        <button [hidden]="form.invalid"class="btn btn-primary float-right mt-4" type="submit">Create Form</button>
+        <button [hidden]="formModel.invalid"class="btn btn-primary float-right mt-4" type="submit">Create Form</button>
     </form>
 </div>
