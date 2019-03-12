@@ -1,5 +1,6 @@
 import { Injectable } from "@angular/core";
 import { FormGroup, FormBuilder, Validators } from "@angular/forms";
+import { EmailValidatorService } from "src/app/core/services/email.validator.service";
 
 @Injectable({
     providedIn: 'root'
@@ -9,7 +10,9 @@ export class WizardValidatorService {
 
     formModel: FormGroup;
 
-    constructor(private formBuilder: FormBuilder){
+    constructor(
+        private formBuilder: FormBuilder,
+        private emailValidatorService: EmailValidatorService){
         this.formModel = this.formBuilder.group({
             name: ['',
                 [
@@ -18,9 +21,7 @@ export class WizardValidatorService {
                     Validators.maxLength(20)
                 ]
             ],
-            type: [
-                Validators.required
-            ],
+            type: [''],
             access: [''],
             author: ['Rafael Marinho'],
             description: ['',
@@ -34,7 +35,8 @@ export class WizardValidatorService {
                 [
                     Validators.required,
                     Validators.email
-                ]
+                ],
+                this.emailValidatorService.emailExists()
             ]
         })
     }

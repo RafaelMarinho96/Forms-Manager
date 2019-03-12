@@ -1,5 +1,8 @@
 import { Component, Input, OnInit } from "@angular/core";
 
+import { GroupModel } from "src/app/core/models/group.model";
+import { FormModel } from "src/app/core/models/form.model";
+
 @Component({
     selector: 'app-card',
     templateUrl: './card.component.html',
@@ -8,15 +11,14 @@ import { Component, Input, OnInit } from "@angular/core";
 
 export class CardComponent implements OnInit{
     
-    @Input('cardName') name: string;
+    @Input('cardData') data: GroupModel | FormModel | Object;
     @Input('cardIcon') icon: string;
-    @Input('cardUrl') url: string[];
-    @Input('cardColor') color: string;
-    @Input('cardBackground') background: string;
     
+    url: string;
+
     constructor(){}
 
     ngOnInit(): void {
-        console.log(this.icon)
+
     }
 }

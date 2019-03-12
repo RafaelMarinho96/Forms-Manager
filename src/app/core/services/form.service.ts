@@ -1,8 +1,8 @@
 import { Injectable } from "@angular/core";
+import { map } from "rxjs/operators";
 
 import { ApiService } from "./api.service";
-import { Observable } from "rxjs";
-import { map } from "rxjs/operators";
+import { FormModel } from "../models/form.model";
 
 @Injectable({
     providedIn: 'root'
@@ -10,18 +10,20 @@ import { map } from "rxjs/operators";
 
 export class FormService {
 
+    //form: Form = new Form();
+
     constructor(private apiService: ApiService){}
 
-    getForm(id: string): Observable<any>{
+    getForm(id: string){
         return this.apiService.get('/form/' + id);
     }
 
-    postForm(groupId: string, name: string, description: string, level: string, members: Object[], forms: Object[]){
-        return this.apiService.put('/group/push/' + groupId, {
+    postForm(form: FormModel){
+        return this.apiService.put('/group/push/' + '5c81ce945d923d413c2c5b6a', {
             forms: [{
-                name: name,
-                description: description,
-                form: forms
+                name: form.name,
+                description: form.description,
+                form: form.form
             }]
         }).pipe(map(res => {
             return res.body;

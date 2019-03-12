@@ -1,8 +1,8 @@
-export class Form{
+export class FormModel{
     _id: string;
     name: string;
     description: string;
     author: string;
     group: string;
-    form: any[];
+    form: Object[] = new Array<Object>();
 }

@@ -22,6 +22,11 @@
                     class="text-muted text-right"
                     *ngIf="formModel.get('members').errors?.email" text="Email format is invalid.">
                 </app-helper-text>
+                <app-helper-text
+                    class="text-muted text-right"
+                    *ngIf="formModel.get('members').errors?.emailExists" 
+                    text="E-mail is not find">
+                </app-helper-text>
             </div>
     
             <div class="form-group col">

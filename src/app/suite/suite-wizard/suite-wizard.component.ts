@@ -4,7 +4,7 @@ import { FormGroup } from "@angular/forms";
 
 import { WizardValidatorService } from "src/app/shared/validators/wizard.validator.service";
 import { FormService } from "src/app/core/services/form.service";
-import { Form } from "src/app/core/models/form.model";
+import { FormModel } from "src/app/core/models/form.model";
 
 
 @Component({
@@ -15,7 +15,7 @@ import { Form } from "src/app/core/models/form.model";
 export class SuiteWizardComponent implements OnInit {
     
     formModel: FormGroup;
-    private form: Form = new Form();
+    private form: FormModel = new FormModel();
 
     constructor(
         private wizardValidatorService: WizardValidatorService,
@@ -29,14 +29,10 @@ export class SuiteWizardComponent implements OnInit {
     }
 
     onSaveForm(){
-        let name = this.formModel.get('name').value;
-        let type = this.formModel.get('type').value;
-        let access = this.formModel.get('access').value;
-        let author = this.formModel.get('author').value;
-        let description = this.formModel.get('description').value;
-        let members = this.formModel.get('members').value; 
+        this.form.name = this.formModel.get('name').value;
+        this.form.description = this.formModel.get('description').value;
 
-        this.formService.postForm('5c81ce945d923d413c2c5b6a', name, description, access, members, [])
+        this.formService.postForm(this.form)
             .subscribe(
                 form => {
                     this.form = form,

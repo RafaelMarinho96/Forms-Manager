@@ -7,11 +7,15 @@ const GROUP_ROUTES: Routes = [
     {
         path: '',
         pathMatch: 'full',
-        redirectTo: 'groups'
+        redirectTo: 'group'
     },
     {
-        path: 'groups',
+        path: 'group',
         component: GroupAreaComponent
+    },
+    {
+        path: 'group/:urlPath',
+        component: GroupContentComponent
     },
     {
         path: 'my-group',

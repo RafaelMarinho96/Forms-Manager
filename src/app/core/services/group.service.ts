@@ -8,9 +8,13 @@ import { ApiService } from "./api.service";
 
 export class GroupService {
 
-    constructor(private api: ApiService){}
+    constructor(private apiService: ApiService){}
 
-    getForms(){
-        
+    getGroups(){
+        return this.apiService.get('/group');
+    }
+
+    getGroupFormByUrlPath(urlPath: string){
+        return this.apiService.get('/group/' + urlPath + '/urlpath');
     }
 }
