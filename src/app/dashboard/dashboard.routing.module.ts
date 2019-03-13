@@ -17,7 +17,7 @@ const dashboardRoutes: Routes = [
             },
             {
                 path: 'form',
-                loadChildren: '../suite/suite-renderer/suite-renderer.module#SuiteRendererModule'
+                loadChildren: '../form/form.module#FormModule'
             },
             {
                 path: 'form-builder',
