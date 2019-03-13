@@ -20,6 +20,7 @@ export class BreadcrumbComponent implements OnInit{
     
     ngOnInit(): void {
         console.log(this.router.url)
+        console.log()
         this.router.events.subscribe((event) => {
             if(event instanceof NavigationEnd){
                 this.url = event.url,
