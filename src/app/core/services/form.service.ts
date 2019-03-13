@@ -19,7 +19,7 @@ export class FormService {
     }
 
     postForm(form: FormModel){
-        return this.apiService.put('/group/push/' + '5c81ce945d923d413c2c5b6a', {
+        return this.apiService.put('/group/push/' + form.group._id, {
             forms: [{
                 name: form.name,
                 description: form.description,
@@ -28,5 +28,11 @@ export class FormService {
         }).pipe(map(res => {
             return res.body;
         }))
+    }
+
+    postFormModel(formId: string, formData: Object){
+        console.log(formId)
+        return this.apiService.put('/form/push/' + formId, { 
+            form: formData });
     }
 }

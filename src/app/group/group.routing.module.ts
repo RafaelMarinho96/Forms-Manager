@@ -21,6 +21,10 @@ const GROUP_ROUTES: Routes = [
         path: 'my-group',
         component: GroupContentComponent
     },
+    {
+        path: 'form',
+        loadChildren: '../suite/suite-renderer/suite-renderer.module#SuiteRendererModule'
+    }
 ]
 
 @NgModule({

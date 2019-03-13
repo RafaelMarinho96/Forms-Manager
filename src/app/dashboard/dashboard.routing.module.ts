@@ -1,10 +1,6 @@
 import { NgModule } from "@angular/core";
 import { Routes, RouterModule } from "@angular/router";
 import { DashboardComponent } from "./dashboard.component";
-import { TableComponent } from "../shared/components/table/table.component";
-import { FormBuilderComponent } from "../form/form-builder/form-builder.component";
-import { FormComponent } from "../form/form.component";
-import { GroupAreaComponent } from "../group/group-area/group-area.component";
 
 const dashboardRoutes: Routes = [
     {
@@ -20,7 +16,7 @@ const dashboardRoutes: Routes = [
                 loadChildren: '../suite/suite.module#SuiteModule'
             },
             {
-                path: 'renderer',
+                path: 'form',
                 loadChildren: '../suite/suite-renderer/suite-renderer.module#SuiteRendererModule'
             },
             {

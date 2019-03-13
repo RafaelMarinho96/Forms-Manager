@@ -1,5 +1,5 @@
 <div class="card-content col-3 float-left">
-    <a routerLink="{{data?.urlPath}}" class="card mb-3">
+    <a [routerLink]="isForm ? [data?.urlPath] : []" class="card mb-3">
         <div class="card-body">
             <i class="fa {{icon}}"></i>
         </div>

@@ -11,14 +11,14 @@ import { FormModel } from "src/app/core/models/form.model";
 
 export class CardComponent implements OnInit{
     
-    @Input('cardData') data: GroupModel | FormModel | Object;
+    @Input('cardData') data: GroupModel|FormModel|Object;
     @Input('cardIcon') icon: string;
     
-    url: string;
+    @Input('cardForm') isForm: boolean = true;
 
     constructor(){}
 
     ngOnInit(): void {
-
+        
     }
 }

@@ -35,7 +35,12 @@ export class GroupContentComponent implements OnInit{
 
     onLoadGroupForms(){
         this.groupService.getGroupFormByUrlPath(this.urlPath).subscribe(
-            (forms) => {this.formsGroup = forms, this.forms = this.formsGroup.forms},
+            (forms) => {
+                this.formsGroup = forms, 
+                this.forms = this.formsGroup.forms,
+                this.groupService.setGroupId(this.formsGroup._id),
+                this.groupService.setGroupUrlPath(this.formsGroup.urlPath)
+            },
             (err) => {console.log(err)}
         )
     }

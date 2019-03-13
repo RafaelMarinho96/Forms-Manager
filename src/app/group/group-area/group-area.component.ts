@@ -15,6 +15,8 @@ export class GroupAreaComponent implements OnInit{
     constructor(private groupService: GroupService){}
 
     ngOnInit(): void {
+        this.groupService.removeGroup();
+        
         this.groupService
             .getGroups()
             .subscribe(

@@ -4,23 +4,12 @@ import { Subscription } from "rxjs";
 
 import { FormService } from "src/app/core/services/form.service";
 import { FormModel } from "src/app/core/models/form.model";
+import { GroupService } from "src/app/core/services/group.service";
 
 declare var $: any;
 var fbEditor = document.getElementById('fb-editor');
 var formBuilder = $(fbEditor).formBuilder();
-var options = {
-    disableFields: [
-      'autocomplete',
-      'file',
-      'date',
-      'paragraph',
-      'header',
-      'button'
-    ],
-    onSave: function(formData) {
-        console.log(formBuilder.formData)
-    }
-}
+
 
 @Component({
     templateUrl: './form-builder.component.html',
@@ -29,17 +18,29 @@ var options = {
 
 export class FormBuilderComponent implements OnInit {
 
-    inscription: Subscription;
-    form: FormModel = new FormModel();
-
     constructor(
         private route: ActivatedRoute,
         private formService: FormService,
+        private groupService: GroupService,
         private router: Router
     ){}
 
+    options = {
+        disableFields: [
+          'autocomplete',
+          'file',
+          'date',
+          'paragraph',
+          'header',
+          'button'
+        ]
+    }
+
+    inscription: Subscription;
+    form: FormModel = new FormModel();
+
     ngOnInit(): void {
-        $(document.getElementById('fb-editor')).formBuilder(options);
+        $(document.getElementById('fb-editor')).formBuilder(this.options);
 
         this.inscription = this.route.params.subscribe(
             (params: any) => {
@@ -61,5 +62,12 @@ export class FormBuilderComponent implements OnInit {
 
     NgOnDestroy(): void{
         this.inscription.unsubscribe();
+    }
+
+    onSaveFormModel(){
+        this.formService.postFormModel(this.form._id, formBuilder.formData).subscribe(
+            (form) => {console.log(form), this.router.navigate(['/dashboard/group/', this.groupService.getGroupUrlPath()])},
+            (err) => {console.log(err)}
+        )
     }
 }

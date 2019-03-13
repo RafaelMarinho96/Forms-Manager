@@ -5,6 +5,7 @@ import { FormGroup } from "@angular/forms";
 import { WizardValidatorService } from "src/app/shared/validators/wizard.validator.service";
 import { FormService } from "src/app/core/services/form.service";
 import { FormModel } from "src/app/core/models/form.model";
+import { GroupService } from "src/app/core/services/group.service";
 
 
 @Component({
@@ -20,6 +21,7 @@ export class SuiteWizardComponent implements OnInit {
     constructor(
         private wizardValidatorService: WizardValidatorService,
         private formService: FormService,
+        private groupService: GroupService,
         private router: Router){
         this.formModel = this.wizardValidatorService.formModel;
     }
@@ -31,6 +33,7 @@ export class SuiteWizardComponent implements OnInit {
     onSaveForm(){
         this.form.name = this.formModel.get('name').value;
         this.form.description = this.formModel.get('description').value;
+        this.form.group._id = this.groupService.getGroupId();
 
         this.formService.postForm(this.form)
             .subscribe(
