@@ -5,7 +5,12 @@ import { FormComponent } from "./form.component";
 const FORM_ROUTES: Routes = [
     {
         path: '',
-        component: FormComponent
+        children: [
+            {
+                path: ':urlPath',
+                component: FormComponent
+            }
+        ]
     }
 ]
 

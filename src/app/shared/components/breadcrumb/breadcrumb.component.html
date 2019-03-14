@@ -4,13 +4,16 @@
             <li class="breadcrumb-item"><a href="#">Home</a></li>
             <li class="breadcrumb-item active" aria-current="page">Library</li>
         </ol>
-        <div class="breadcrumb-actions col">
-            <button [routerLink]="['../new-form']" type="button" class="btn btn-primary float-right"><i class="fas fa-plus"></i> New</button>
-        </div>
-        <ng-template>
+
+        <ng-template [ngIf]="type=='form'">
+            <div class="breadcrumb-actions col">
+                <button [routerLink]="['../new-form']" type="button" class="btn btn-primary float-right">Send</button>
+            </div>
+        </ng-template>
+        <ng-template [ngIf]="type=='group'">
             <div class="breadcrumb-actions col">
                 <button [routerLink]="['../new-form']" type="button" class="btn btn-primary float-right"><i class="fas fa-plus"></i> New</button>
             </div>
-        </ng-template>
+        </ng-template> 
     </div>
 </nav>

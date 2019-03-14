@@ -2,18 +2,24 @@ import { NgModule } from "@angular/core";
 import { CommonModule } from "@angular/common";
 import { RouterModule } from "@angular/router";
 
-import { CardComponent } from "./card.component";
+import { CardGroupComponent } from "./card-group/card-group.component";
+import { CardFormComponent } from "./card-form/card-form.component";
+import { CardIconComponent } from "./card-icon/card-icon.component";
 
 @NgModule({
     declarations: [
-        CardComponent
+        CardGroupComponent,
+        CardFormComponent,
+        CardIconComponent
     ],
     imports: [
         CommonModule,
         RouterModule
     ],
     exports: [
-        CardComponent
+        CardGroupComponent,
+        CardFormComponent,
+        CardIconComponent
     ],
     providers: []
 })

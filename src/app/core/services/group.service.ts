@@ -18,6 +18,10 @@ export class GroupService {
         return this.apiService.get('/group');
     }
 
+    getGroupById(id: string){
+        return this.apiService.get('/group/' + id);
+    }
+
     getGroupFormByUrlPath(urlPath: string){
         return this.apiService.get('/group/' + urlPath + '/urlpath');
     }

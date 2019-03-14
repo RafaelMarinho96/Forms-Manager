@@ -3,6 +3,7 @@ import { CommonModule } from "@angular/common";
 
 import { FormComponent } from "./form.component";
 import { FormRoutingModule } from "./form.routing.module";
+import { CardModule } from "../shared/components/card/card.module";
 
 
 @NgModule({
@@ -11,7 +12,8 @@ import { FormRoutingModule } from "./form.routing.module";
     ],
     imports: [
         CommonModule,
-        FormRoutingModule
+        FormRoutingModule,
+        CardModule
     ],
     exports: [],
     providers: []
