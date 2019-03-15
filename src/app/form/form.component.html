@@ -1,3 +1,1 @@
-<div class="container">
-    <app-card-icon *ngFor="let form of forms" [cardData]="form" cardIcon="fa-file"></app-card-icon>
-</div>
+<app-form-renderer *ngIf="formActive" formData="forms"></app-form-renderer>

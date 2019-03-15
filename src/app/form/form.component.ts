@@ -1,5 +1,9 @@
 import { Component, OnInit } from "@angular/core";
-import { GroupService } from "../core/services/group.service";
+
+import { ActivatedRoute } from "@angular/router";
+import { FormModel } from "../core/models/form.model";
+import { FormService } from "../core/services/form.service";
+import { RouterService } from "../core/services/router.service";
 
 
 @Component({
@@ -9,16 +13,33 @@ import { GroupService } from "../core/services/group.service";
 
 export class FormComponent implements OnInit{
     
-    forms: any;
+    forms: FormModel;
+    formActive: boolean;
+    urlPath: string;
+
     constructor(
-        private groupService: GroupService){}
+        private formService: FormService,
+        private route: ActivatedRoute){
+            this.route.params.subscribe(
+                (param: any) => {
+                    this.urlPath = param['urlPath']
+                }
+            )
+        }
     
     ngOnInit(): void {
-        let groupId = this.groupService.getGroupId();
-        this.groupService.getGroupById(groupId).subscribe(
-            (forms) => {
-                this.forms = forms.group.forms,
-                console.log(this.forms)
+        this.formService.getFormByName(this.urlPath).subscribe(
+            (form) => {
+                this.forms = form,
+                console.log(form)
+            },
+            (err) => {
+                console.log(err)
+            }
+        )
+        this.route.queryParams.subscribe(
+            (param: any) => {
+                this.formActive = param['publish']
             },
             (err) => {
                 console.log(err)
