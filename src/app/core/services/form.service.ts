@@ -18,6 +18,10 @@ export class FormService {
         return this.apiService.get('/form/' + id);
     }
 
+    getFormByName(urlPath: string){
+        return this.apiService.get('/form/' + urlPath + '/urlPath');
+    }
+
     postForm(form: FormModel){
         return this.apiService.put('/group/push/' + form.group._id, {
             forms: [{
