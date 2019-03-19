@@ -51,7 +51,7 @@ export class FormRendererComponent implements OnInit{
         this.answerService.postAnswer(this.answer).subscribe(
             (form) => {
                 console.log(form),
-                this.router.navigate(['form', this.answer.group._id])
+                this.router.navigate(['form', this.answer.form._id])
             },
             (err) => {
                 console.log(err)

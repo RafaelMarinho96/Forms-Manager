@@ -11,6 +11,7 @@ import { HelperTextModule } from './shared/components/helper-text/helper-text.mo
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { LoginModule } from './login/login.module';
 import { RequestInterceptor } from './core/interceptors/request.interceptor.service';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [
@@ -23,6 +24,7 @@ import { RequestInterceptor } from './core/interceptors/request.interceptor.serv
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
+    NgbModule,
 
     HelperTextModule,
     DashboardModule,

@@ -10,7 +10,7 @@ import { AnswerModel } from "../core/models/answer.model";
 
 @Component({
     templateUrl: './form.component.html',
-    styleUrls: ['./form.component.scss']
+    styleUrls: ['./form.component.scss'],
 })
 
 export class FormComponent implements OnInit{
@@ -23,7 +23,8 @@ export class FormComponent implements OnInit{
     constructor(
         private formService: FormService,
         private route: ActivatedRoute,
-        private answerService: AnswerService){}
+        private answerService: AnswerService){
+        }
 
     ngOnInit(): void { 
         this.route.params.subscribe(

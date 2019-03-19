@@ -6,12 +6,14 @@ import { FormRoutingModule } from "./form.routing.module";
 import { CardModule } from "../shared/components/card/card.module";
 import { FormRendererComponent } from "./form-renderer/form-renderer.component";
 import { ComponentsModule } from "../shared/components/components.module";
+import { FormModalComponent } from "./form-modal/form-modal.component";
 
 
 @NgModule({
     declarations: [
         FormComponent,
-        FormRendererComponent
+        FormRendererComponent,
+        FormModalComponent
     ],
     imports: [
         CommonModule,
