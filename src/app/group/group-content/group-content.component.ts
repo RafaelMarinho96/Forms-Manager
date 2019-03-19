@@ -5,6 +5,7 @@ import { Subscription } from "rxjs";
 import { GroupService } from "src/app/core/services/group.service";
 import { GroupModel } from "src/app/core/models/group.model";
 import { FormModel } from "src/app/core/models/form.model";
+import { FormService } from "src/app/core/services/form.service";
 
 @Component({
     templateUrl: './group-content.component.html',
@@ -20,10 +21,12 @@ export class GroupContentComponent implements OnInit{
 
     constructor(
         private route: ActivatedRoute,
-        private groupService: GroupService
+        private groupService: GroupService,
+        private formService: FormService
     ){}
 
     ngOnInit(): void {
+        this.formService.removeForm();
         this.inscription = this.route.params.subscribe(
             (params: any) => {
                 this.urlPath = params['urlPath']

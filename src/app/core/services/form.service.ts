@@ -4,6 +4,9 @@ import { map } from "rxjs/operators";
 import { ApiService } from "./api.service";
 import { FormModel } from "../models/form.model";
 
+
+const KEY_ID: string = 'formId';
+
 @Injectable({
     providedIn: 'root'
 })
@@ -20,6 +23,10 @@ export class FormService {
 
     getFormByName(urlPath: string){
         return this.apiService.get('/form/' + urlPath + '/urlPath');
+    }
+
+    getFormById(formId: string){
+        return this.apiService.get('/form/' + formId);
     }
 
     postForm(form: FormModel){
@@ -39,4 +46,21 @@ export class FormService {
         return this.apiService.put('/form/push/' + formId, { 
             form: formData });
     }
+
+    hasForm() {
+        return !!this.getFormId();
+    }
+
+    setFormId(formId: string) {
+        window.localStorage.setItem(KEY_ID, formId);
+    }
+
+    getFormId() {
+        return window.localStorage.getItem(KEY_ID);
+    }
+
+    removeForm() {
+        window.localStorage.removeItem(KEY_ID);
+    }
+
 }

@@ -2,6 +2,7 @@ import { Component, Input, OnInit } from "@angular/core";
 
 import { GroupModel } from "src/app/core/models/group.model";
 import { FormModel } from "src/app/core/models/form.model";
+import { AnswerModel } from "src/app/core/models/answer.model";
 
 @Component({
     selector: 'app-card-icon',
@@ -11,7 +12,7 @@ import { FormModel } from "src/app/core/models/form.model";
 
 export class CardIconComponent implements OnInit{
     
-    @Input('cardData') data: GroupModel|FormModel|Object;
+    @Input('cardData') data: AnswerModel;
     @Input('cardIcon') icon: string;
     
     @Input('cardType') type: string;

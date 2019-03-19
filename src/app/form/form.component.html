@@ -1,1 +1,5 @@
-<app-form-renderer *ngIf="formActive" formData="forms"></app-form-renderer>
+<router-outlet></router-outlet>
+
+<div class="container">
+    <app-card-icon *ngFor="let answer of answers" [cardData]="answer" cardIcon="fa-file"></app-card-icon>
+</div>
