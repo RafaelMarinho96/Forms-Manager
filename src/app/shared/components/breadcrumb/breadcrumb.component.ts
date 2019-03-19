@@ -19,6 +19,7 @@ export class BreadcrumbComponent implements OnInit{
 
     constructor(
         private routerService: RouterService,
+        private router: Router,
         private formService: FormService){
         this.routerService.routerEvents().subscribe(
             (event) => {
@@ -34,7 +35,7 @@ export class BreadcrumbComponent implements OnInit{
                             
                             case 'form':
                                 this.type = 'form',
-                                this.formId = this.formService.getFormId();
+                                this.formId = this.formService.getFormUrlPath();
                                 break;
 
                             default:
@@ -48,5 +49,9 @@ export class BreadcrumbComponent implements OnInit{
 
     ngOnInit(): void {
         
+    }
+
+    navigateNew(){
+        this.router.navigate([this.url, 'new']);
     }
 }

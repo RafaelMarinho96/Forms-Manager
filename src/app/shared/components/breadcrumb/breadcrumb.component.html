@@ -7,7 +7,7 @@
 
         <ng-template [ngIf]="type=='form'">
             <div class="breadcrumb-actions col">
-                <button [routerLink]="['form', formId, 'new']" type="button" class="btn btn-primary float-right">Send</button>
+                <button (click)="navigateNew()" type="button" class="btn btn-primary float-right">Send</button>
             </div>
         </ng-template>
         <ng-template [ngIf]="type=='group'">

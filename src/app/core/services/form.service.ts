@@ -5,7 +5,7 @@ import { ApiService } from "./api.service";
 import { FormModel } from "../models/form.model";
 
 
-const KEY_ID: string = 'formId';
+const KEY_ID: string = 'urlPath';
 
 @Injectable({
     providedIn: 'root'
@@ -23,6 +23,10 @@ export class FormService {
 
     getFormByName(urlPath: string){
         return this.apiService.get('/form/' + urlPath + '/urlPath');
+    }
+
+    getFormByUrlPath(urlPath: string){
+        return this.apiService.get('/form/' + urlPath + '/byUrlPath');
     }
 
     getFormById(formId: string){
@@ -48,14 +52,14 @@ export class FormService {
     }
 
     hasForm() {
-        return !!this.getFormId();
+        return !!this.getFormUrlPath();
     }
 
-    setFormId(formId: string) {
-        window.localStorage.setItem(KEY_ID, formId);
+    setFormUrlPath(urlPath: string) {
+        window.localStorage.setItem(KEY_ID, urlPath);
     }
 
-    getFormId() {
+    getFormUrlPath() {
         return window.localStorage.getItem(KEY_ID);
     }
 

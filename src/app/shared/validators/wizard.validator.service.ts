@@ -18,10 +18,10 @@ export class WizardValidatorService {
                 [
                     Validators.required,
                     Validators.minLength(2),
-                    Validators.maxLength(20)
+                    Validators.maxLength(30)
                 ]
             ],
-            type: [''],
+            //type: [''],
             access: [''],
             author: ['Rafael Marinho'],
             description: ['',
@@ -30,14 +30,14 @@ export class WizardValidatorService {
                     Validators.minLength(8),
                     Validators.maxLength(140)
                 ]
-            ],
+            ]/*,
             members: ['',
                 [
                     Validators.required,
                     Validators.email
                 ],
                 this.emailValidatorService.emailExists()
-            ]
+            ]*/
         })
     }
 

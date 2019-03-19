@@ -18,7 +18,9 @@ declare var $: any;
 
 export class FormRendererComponent implements OnInit{
 
+    urlPath: string;
     formId: string;
+    form: FormModel = new FormModel();
     private answer: AnswerModel = new AnswerModel();
 
     constructor(
@@ -28,13 +30,14 @@ export class FormRendererComponent implements OnInit{
         private router: Router){}
 
     ngOnInit(): void {
-        this.formId = this.formService.getFormId();
+        this.urlPath = this.formService.getFormUrlPath();
 
-        this.formService.getFormById(this.formId).subscribe(
+        this.formService.getFormByUrlPath(this.urlPath).subscribe(
             (form) => {
+                this.formId = form.form[0]._id;
                 $('.fb-render').formRender({
                     dataType: 'json',
-                    formData: form.form.form
+                    formData: form.form[0].form
                 });
             },
             (err) => {
@@ -44,14 +47,14 @@ export class FormRendererComponent implements OnInit{
     }
 
     onSaveForm(){
-        this.answer.form._id = this.formService.getFormId();
+        this.answer.form._id = this.formId;
         this.answer.group._id = this.groupService.getGroupId();
         this.answer.answer = $('.fb-render').formRender("userData");
 
         this.answerService.postAnswer(this.answer).subscribe(
             (form) => {
                 console.log(form),
-                this.router.navigate(['form', this.answer.form._id])
+                this.router.navigate(['form', this.urlPath])
             },
             (err) => {
                 console.log(err)

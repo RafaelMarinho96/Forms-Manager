@@ -20,6 +20,14 @@ export class AnswerService {
     }
 
     getAnswerFormByFormId(formId: string){
-        return this.apiService.get('/form/answer/' + formId + '/byFormId');
+        return this.apiService.get('/answer/' + formId + '/byFormId');
+    }
+
+    getAnswerById(answerId: string){
+        return this.apiService.get('/answer/' + answerId);
+    }
+
+    getAnswerFormByUrlPath(urlPath: string){
+        return this.apiService.get('/form/' + urlPath + '/urlPath');
     }
 }

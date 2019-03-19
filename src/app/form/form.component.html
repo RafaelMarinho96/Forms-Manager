@@ -1,5 +1,29 @@
 <router-outlet></router-outlet>
 
 <div class="container">
-    <app-card-icon *ngFor="let answer of answers" [cardData]="answer" cardIcon="fa-file"></app-card-icon>
+    <a *ngFor="let answer of answers" [routerLink]="" [queryParams]="{answer: answer._id}" (click)="open(content, answer)">
+        <app-card-icon [cardData]="answer" cardIcon="fa-file"></app-card-icon>
+    </a>
 </div>
+
+
+<ng-template #content let-c="close" let-d="dismiss">
+    <div class="modal-header">
+        <h4 class="modal-title" id="modal-basic-title">Form Data</h4>
+        <button type="button" class="close" aria-label="Close" (click)="d('Cross click')">
+        <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+    <ul class="list-group">
+        <li *ngFor="let answer of modalAnswer" class="list-group-item list-group-item-action">
+            <div class="d-flex w-100 justify-content-between">
+                <h5 class="mb-1">{{answer?.label}}</h5>
+            </div>
+            <p class="mb-1">{{answer?.userData}}</p>
+        </li>
+    </ul>
+    <div class="modal-footer">
+
+    </div>
+</ng-template>
+        

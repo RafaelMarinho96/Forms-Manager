@@ -8,11 +8,11 @@ const FORM_ROUTES: Routes = [
         path: '',
         children: [
             {
-                path: ':formId',
+                path: ':urlPath',
                 component: FormComponent
             },
             {
-                path: ':formId/new',
+                path: ':urlPath/new',
                 component: FormRendererComponent
             }
         ]
